@@ -1,0 +1,32 @@
+import React from 'react'
+import HomeImg from '../Images/Home.jpg'
+
+export default function Home() {
+  return (
+        <div style={{backgroundImage: `url(${HomeImg})`}} className="w-full h-screen text-white">
+            <div className='flex justify-between items-center px-16 py-8'>
+            <div className='flex gap-16'>
+                <div className='flex'>
+                    <img alt=''/>
+                    <h1 className='font-bold text-xl'>Arctic Travels</h1>
+                </div>
+                <ul className='flex gap-4 text-gray-100'>
+                    <li>About Us</li>
+                    <li>Support</li>
+                    <li>Language</li>
+                </ul>
+            </div>
+            <div>
+                <button className='bg-white text-blue-800 py-2 px-8 rounded-md'>Sign In</button>
+            </div>
+            </div>
+
+            <div className='px-12 py-20'>
+                <h1 className='capitalize font-bold text-5xl'>plan the perfect winter trip</h1>
+                <p className='text-lg py-6'>Easily plan your ideal ski trip from home with the help <br/> of professionals</p>
+                <button className='bg-blue-600 rounded-md py-3 px-8'>Book Here</button>
+            </div>
+        </div>
+  )
+}
+

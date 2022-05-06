@@ -1,0 +1,40 @@
+import React, {useState} from "react";
+import {FaTimes, FaBars} from "react-icons/fa"
+
+export default function NavBar() {
+
+    const [nav, setNav] = useState(true)
+    const toggle = () => setNav(!nav)
+
+    return(
+        <div className="bg-[#0a192f] text-white w-full p-8 flex justify-between items-center border-b-2 border-pink-300">
+            <h1 className="uppercase text-lg">Angus CV</h1>
+            
+            <ul className=" hidden sm:flex justify-between">
+                <li className="hover:border-b-2 border-pink-300 ">
+                <Link to="home" smooth={true} duration={500} >Home</Link>
+                </li>
+                <li className="hover:border-b-2 border-pink-300 ">
+                <Link to="education" smooth={true} duration={500} >Education</Link>
+                </li>
+                <li className="hover:border-b-2 border-pink-300 ">
+                <Link to="experience" smooth={true} duration={500} >Experience</Link>
+                </li>
+                <li className="hover:border-b-2 border-pink-300 ">
+                <Link to="contact" smooth={true} duration={500} >Contact</Link>
+                </li>
+            </ul>
+
+            {/** Mobile list */}
+            <div onClick={toggle} className="sm:hidden z-10">
+                {nav ? <FaBars/> : <FaTimes/>}
+            </div>
+            <ul className={nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-inherit flex flex-col justify-center items-center my-8 sm:hidden'}>
+                    <li><Link to="home" smooth={true} duration={500} >Home</Link></li>
+                    <li><Link to="education" smooth={true} duration={500} >Education</Link></li>
+                    <li><Link to="experience" smooth={true} duration={500} >Experience</Link></li>
+                    <li><Link to="contact" smooth={true} duration={500} >Contact</Link></li>
+            </ul>
+        </div>
+    )
+}
